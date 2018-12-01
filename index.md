@@ -20,7 +20,8 @@ layout: home
         <div class="container">
             <div class="contact">
                 <h1>¡Hacenos parte de la fiesta!</h1>
-                <form class="pure-form" action="https://formspree.io/hey@inbyte.me" method="POST">
+                <form class="pure-form" action="https://getsimpleform.com/messages?form_api_token=b22a9eb5e5b0af5946589870e6a2ac12" method="POST">
+                    <!-- <input type='hidden' name='redirect_to' value='<the complete return url e.g. http://fooey.com/thank-you.html>' /> -->
                     <fieldset class="pure-group">
                         <input type="text" class="pure-input-1" placeholder="Nombre" name="name" required>
                         <input type="tel" class="pure-input-1" placeholder="Teléfono de contacto" name="phone" required>
