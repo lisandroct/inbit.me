@@ -20,22 +20,21 @@ layout: home
         <div class="container">
             <div class="contact">
                 <h1>¡Hacenos parte de la fiesta!</h1>
-                <form class="pure-form">
+                <form class="pure-form" action="https://formspree.io/hey@inbyte.me" method="POST">
                     <fieldset class="pure-group">
-                        <input type="text" class="pure-input-1" placeholder="Nombre Completo">
-                        <input type="text" class="pure-input-1" placeholder="Teléfono de contacto">
-                        <input type="email" class="pure-input-1" placeholder="Email">
+                        <input type="text" class="pure-input-1" placeholder="Nombre" name="name" required>
+                        <input type="tel" class="pure-input-1" placeholder="Teléfono de contacto" name="phone" required>
+                        <input type="email" class="pure-input-1" placeholder="Email de contacto" name="email" required>
                     </fieldset>
 
                     <fieldset class="pure-group">
-                        <textarea rows="20" class="pure-input-1" placeholder="Consulta..."></textarea>
+                        <textarea rows="20" class="pure-input-1" placeholder="Consulta..." name="message" required></textarea>
                     </fieldset>
 
                     <button type="submit" class="pure-button pure-input-1 submit">Enviar</button>
                 </form>
             </div>
         </div>
-
         <div class="contact-info">
             <p>INSTAGRAM - FACEBOOK</p>
             <p>hey@inbyte.me</p>
