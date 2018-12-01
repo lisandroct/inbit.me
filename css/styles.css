@@ -94,11 +94,6 @@ html a:hover {
     margin-right: 0.3em;
 }
 
-.greetings {
-    display: none;
-    color: #f5af00;
-}
-
 #b-video {
     position: absolute;
     z-index: -10;
