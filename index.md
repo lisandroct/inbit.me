@@ -19,9 +19,8 @@ layout: home
     <div class="right">
         <div class="container">
             <div class="contact">
-                <h1>¡Hacenos parte de la fiesta!</h1>
+                <h1>¡Hacenos parte de tu evento!</h1>
                 <form class="pure-form" id="contact-form" action="http://getsimpleform.com/messages?form_api_token=b22a9eb5e5b0af5946589870e6a2ac12" method="POST">
-                    <!-- <input type='hidden' name='redirect_to' value='<the complete return url e.g. http://fooey.com/thank-you.html>' /> -->
                     <fieldset class="pure-group">
                         <input type="text" class="pure-input-1" placeholder="Nombre" name="name" required>
                         <input type="tel" class="pure-input-1" placeholder="Teléfono de contacto" name="number" required>
@@ -29,16 +28,22 @@ layout: home
                     </fieldset>
 
                     <fieldset class="pure-group">
-                        <textarea rows="20" class="pure-input-1" placeholder="Consulta..." name="message" required></textarea>
+                        <textarea rows="15" class="pure-input-1" placeholder="Consulta..." name="message" required></textarea>
                     </fieldset>
 
-                    <button type="submit" class="pure-button pure-input-1 submit">Enviar</button>
+                    <fieldset class="pure-group greetings" id="greetings">
+                        <h3 style="color: #f5af00">¡Gracias por contactarnos!</h3>
+                    </fieldset>
+                    <fieldset class="pure-group" id="submit-button">
+                        <button type="submit" class="pure-button pure-input-1 submit">Enviar</button>
+                    </fieldset>
                 </form>
             </div>
         </div>
         <div class="contact-info">
-            <p>INSTAGRAM - FACEBOOK</p>
-            <p>hey@inbyte.me</p>
+            <a href="https://instagra.com/lisandroct"><p><i class="fab fa-instagram"></i>@InbitMe</p></a>
+            <a href="mailto://hey@inbyte.me"><p><i class="far fa-envelope"></i> hey@inbyte.me</p></a>
+            <a href="tel:+5493413114710"><p><i class="fab fa-whatsapp"></i> +5493413114710</p></a>
         </div>
     </div>
 </section>

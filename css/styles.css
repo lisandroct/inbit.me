@@ -3,6 +3,15 @@ body {
     background-color: #e3e5e7;
 }
 
+html a {
+    color: #df1260;
+    text-decoration: none;
+}
+
+html a:hover {
+    color: #ed98af;
+}
+
 .splash {
     min-height: 100vh;
 }
@@ -68,14 +77,26 @@ body {
     height: 10em;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex: none;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .contact-info p {
     margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    font-size: 200%;
+    margin-right: 0.3em;
+}
+
+.greetings {
+    display: none;
+    color: #f5af00;
 }
 
 #b-video {
@@ -100,6 +121,20 @@ body {
 
 .submit {
     background-color: #f5af00;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.submit:hover, .submit:focus {
+    /* csslint ignore:start */
+    filter: none;
+    /* csslint ignore:end */
+    background-image: none;
+    background-color: #ffb600;
+}
+
+textarea {
+    resize: none;
 }
 
 @media screen and (min-width: 1281px) {
@@ -159,5 +194,9 @@ body {
         margin-left: 3em;
         margin-right: 3em;
         margin-bottom: 3em;
+    }
+
+    .contact-info {
+        flex-direction: column;
     }
 }

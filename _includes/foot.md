@@ -12,7 +12,9 @@
       	xhr.send(formData);
 
         form.reset();
-        alert("Thank you, for contacting us");
+
+        document.getElementById("submit-button").style.display = "none";
+        document.getElementById("greetings").style.display = "block";
     }
 </script>
 </body>
