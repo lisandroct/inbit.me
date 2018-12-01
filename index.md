@@ -32,7 +32,6 @@ layout: home
                     </fieldset>
 
                     <fieldset class="pure-group">
-                        <h4 class="greetings" id="greetings">¡Gracias por contactarnos!</h4>
                         <button type="submit" class="pure-button pure-input-1 submit">Enviar</button>
                     </fieldset>
                 </form>
