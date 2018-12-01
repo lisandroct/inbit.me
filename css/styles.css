@@ -24,10 +24,8 @@ body {
 .splash .right {
     position: relative;
 
-    display: block;
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
 
     flex: none;
 }
@@ -44,7 +42,7 @@ body {
 }
 
 .right .container {
-    height: 80%;
+    flex-grow: 1;
 }
 
 .content {
@@ -59,19 +57,15 @@ body {
 .contact {
     width: 70%;
 
-    margin-top: 4em;
+    margin-top: 1em;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 15em;
+    margin-bottom: 2em;
 }
 
 .contact-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     width: 100%;
-    height: 5em;
+    height: 10em;
 
     display: flex;
     flex-direction: column;
@@ -95,19 +89,20 @@ body {
 }
 
 .logo {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    border-radius: 0 0 15% 0;
-    width: 7em;
+    width: 100%;
+    height: 5em;
+
+    background-color: #ffffff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../assets/logo-h.png");
 }
 
 .submit {
     background-color: #f5af00;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1281px) {
     .splash {
         align-items: stretch;
         display: flex;
@@ -120,8 +115,6 @@ body {
     }
 
     .splash .right {
-        display: flex;
-        flex: none;
         width: 30%;
     }
 
@@ -148,6 +141,23 @@ body {
     }
 
     .logo {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        border-radius: 0 0 15% 0;
         width: 10em;
+        height: 10em;
+
+        background-image: url("../assets/logo-v.png");
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .content {
+        margin-top: 1em;
+        margin-left: 3em;
+        margin-right: 3em;
+        margin-bottom: 3em;
     }
 }

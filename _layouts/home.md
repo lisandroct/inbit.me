@@ -1,4 +1,4 @@
 {% include head.md %}
-<img src="{{site.baseurl}}/assets/logo.png" class="logo">
+<div class="logo"></div>
 {{content}}
 {% include foot.md %}

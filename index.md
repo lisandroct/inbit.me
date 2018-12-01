@@ -10,17 +10,16 @@ layout: home
 
         <div class="container">
             <div class="content">
-                <h1>Invitaciones digitales para eventos</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h1>Invitaciones digitales para casamientos y eventos</h1>
+                <p>Somos un equipo con más de 5 años de experiencia desarrollando videojuegos y experiencias interactivas audiovisuales.</p>
+                <p>Ofrecemos servicios de tarjetería digital e invitaciones interactivas para casamientos, fiestas y eventos. Nos especializamos en soluciones creativas y únicas, con diseños, animaciones e ilustraciones personalizadas. Trabajamos junto a nuestros clientes para lograr concretar su visión de una forma memorable. Nuestro objetivo es que sus invitados vivan una fiesta única desde el momento en que reciben su invitación.</p>
             </div>
         </div>
     </div>
     <div class="right">
         <div class="container">
             <div class="contact">
-                <h1>¡Hacenos parte!</h1>
+                <h1>¡Hacenos parte de la fiesta!</h1>
                 <form class="pure-form">
                     <fieldset class="pure-group">
                         <input type="text" class="pure-input-1" placeholder="Nombre Completo">
