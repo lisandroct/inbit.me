@@ -115,14 +115,14 @@ body {
     }
 
     .splash .left {
-        width: 60%;
+        width: 70%;
         height: auto;
     }
 
     .splash .right {
         display: flex;
         flex: none;
-        width: 40%;
+        width: 30%;
     }
 
     .contact {
