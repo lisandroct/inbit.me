@@ -13,8 +13,12 @@
 
         form.reset();
 
-        document.getElementById("submit-button").style.display = "none";
-        document.getElementById("greetings").style.display = "block";
+        var title = document.getElementById("title");
+        var prev = title.innerHTML;
+        title.innerHTML = "¡Gracias por contactarnos!";
+        window.setTimeout(function () {
+          title.innerHTML = prev;
+        }, 3000);
     }
 </script>
 </body>

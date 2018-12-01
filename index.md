@@ -19,7 +19,7 @@ layout: home
     <div class="right">
         <div class="container">
             <div class="contact">
-                <h1>¡Hacenos parte de tu evento!</h1>
+                <h1 id="title">¡Hacenos parte de tu evento!</h1>
                 <form class="pure-form" id="contact-form" action="http://getsimpleform.com/messages?form_api_token=b22a9eb5e5b0af5946589870e6a2ac12" method="POST">
                     <fieldset class="pure-group">
                         <input type="text" class="pure-input-1" placeholder="Nombre" name="name" required>
@@ -31,10 +31,8 @@ layout: home
                         <textarea rows="15" class="pure-input-1" placeholder="Consulta..." name="message" required></textarea>
                     </fieldset>
 
-                    <fieldset class="pure-group greetings" id="greetings">
-                        <h3 style="color: #f5af00">¡Gracias por contactarnos!</h3>
-                    </fieldset>
-                    <fieldset class="pure-group" id="submit-button">
+                    <fieldset class="pure-group">
+                        <h4 class="greetings" id="greetings">¡Gracias por contactarnos!</h4>
                         <button type="submit" class="pure-button pure-input-1 submit">Enviar</button>
                     </fieldset>
                 </form>
