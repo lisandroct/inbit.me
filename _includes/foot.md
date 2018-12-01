@@ -1,5 +1,7 @@
 <script>
-    document.getElementById("contact-form").onsubmit = function(e) {
+    var form = document.getElementById("contact-form");
+
+    form.onsubmit = function(e) {
       	e.preventDefault();
 
       	var f = e.target,
@@ -9,6 +11,7 @@
       	xhr.open("POST", f.action);
       	xhr.send(formData);
 
+        form.reset();
         alert("Thank you, for contacting us");
     }
 </script>
