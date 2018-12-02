@@ -37,6 +37,9 @@ html a:hover {
     flex-direction: column;
 
     flex: none;
+
+    background-image: url(../assets/pattern.png);
+    background-size: cover;
 }
 
 .container {
@@ -61,6 +64,10 @@ html a:hover {
     margin-left: 3em;
     margin-right: 3em;
     margin-bottom: 1em;
+}
+
+.content p {
+    text-align: justify;
 }
 
 .contact {

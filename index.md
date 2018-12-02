@@ -4,10 +4,10 @@ layout: home
 
 <section class="splash">
     <div class="left">
-        <video autoplay muted loop id="b-video">
-            <source src="{{site.baseurl}}/assets/movie.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline preload id="b-video">
+                <source src="{{site.baseurl}}/assets/hd.webm" type="video/webm">
+                <source src="{{site.baseurl}}/assets/hd.mp4" type="video/mp4">
         </video>
-
         <div class="container">
             <div class="content">
                 <h1>Invitaciones digitales para casamientos y eventos</h1>
@@ -38,8 +38,8 @@ layout: home
             </div>
         </div>
         <div class="contact-info">
-            <a href="https://instagra.com/lisandroct"><p><i class="fab fa-instagram"></i>@InbitMe</p></a>
-            <a href="mailto://hey@inbyte.me"><p><i class="far fa-envelope"></i> hey@inbyte.me</p></a>
+            <a href="https://instagram.com/InbytMe"><p><i class="fab fa-instagram"></i>@InbitMe</p></a>
+            <a href="mailto://hey@inbyt.me"><p><i class="far fa-envelope"></i> hey@inbit.me</p></a>
             <a href="tel:+5493413114710"><p><i class="fab fa-whatsapp"></i> +5493413114710</p></a>
         </div>
     </div>
