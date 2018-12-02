@@ -23,30 +23,43 @@
 </script>
 <script>
     var video = document.getElementById("b-video");
+    var playButton = document.getElementById("play-button");
+    var content = document.getElementById("content");
+    var attempts = 0;
 
     window.onload = function() {
-        var promise = video.play();
-
-        if(promise !== undefined) {
-            promise.then(_ => {
-
-            }).catch(error => {
-                var playButton = document.getElementById("play-button");
-                playButton.style.display = "";
-
-                var content = document.getElementById("content");
-                content.style.opacity = "0";
-            });
-        }
+        playVideo();
     };
 
     function playVideo() {
-        var playButton = document.getElementById("play-button");
-        var content = document.getElementById("content");
+        var promise = video.play();
 
-        video.play();
+        hidePlayButton();
+        if(attempts > 0) {
+            showContent();
+        }
+
+        if(promise !== undefined) {
+            promise.then(_ => {
+                showContent();
+            }).catch(error => {
+                showPlayButton();
+            });
+        }
+
+        attempts++;
+    }
+
+    function showPlayButton() {
+        playButton.style.display = "";
+    }
+
+    function hidePlayButton() {
         playButton.style.display = "none";
-        content.style.opacity = "";
+    }
+
+    function showContent() {
+        content.style.opacity = "1";        
     }
 </script>
 </body>

@@ -64,6 +64,12 @@ html a:hover {
     margin-left: 3em;
     margin-right: 3em;
     margin-bottom: 1em;
+
+    opacity: 0;
+
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s;
 }
 
 .content p {
