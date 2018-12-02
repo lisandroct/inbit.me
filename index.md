@@ -4,7 +4,7 @@ layout: home
 
 <section class="splash">
     <div class="left">
-        <video autoplay muted loop playsinline preload="auto" width="100%" id="b-video">
+        <video autoplay muted loop playsinline preload="auto" id="b-video">
                 <source src="{{site.baseurl}}/assets/hd.webm" type="video/webm">
                 <source src="{{site.baseurl}}/assets/hd.mp4" type="video/mp4">
         </video>

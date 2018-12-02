@@ -21,5 +21,12 @@
         }, 3000);
     }
 </script>
+<script>
+    window.onload = function() {
+        var video = document.getElementById("b-video");
+
+        video.play();
+    };
+</script>
 </body>
 </html>
