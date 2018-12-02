@@ -104,7 +104,6 @@ html a:hover {
 #b-video {
     position: absolute;
     z-index: -10;
-    object-fit: cover;
     min-width: 100%;
     min-height: 100%;
     width: auto;
