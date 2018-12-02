@@ -66,10 +66,6 @@ html a:hover {
     margin-bottom: 1em;
 
     opacity: 0;
-
-    -webkit-transition: opacity 0.5s;
-    -moz-transition: opacity 0.5s;
-    transition: opacity 0.5s;
 }
 
 .content p {
