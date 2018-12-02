@@ -59,7 +59,7 @@
     }
 
     function showContent() {
-        content.style.transition: "opacity 0.5s";
+        content.style.transition = "opacity 0.5s";
         content.style.opacity = "1";        
     }
 </script>
