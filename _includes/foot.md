@@ -22,18 +22,22 @@
     }
 </script>
 <script>
+    window.setTimeout(function () {
+      var video = document.getElementById("b-video");
+      var promise = video.play();
+
+      if(promise !== undefined) {
+          promise.then(_ => {
+
+          }).catch(error => {
+              alert("Son todos putos.");
+              video.play();
+          });
+      }
+    }, 3000);
+    
     window.onload = function() {
-        var video = document.getElementById("b-video");
-        var promise = video.play();
 
-        if(promise !== undefined) {
-            promise.then(_ => {
-
-            }).catch(error => {
-                alert("Son todos putos.");
-                video.play();
-            });
-        }
     };
 </script>
 </body>
