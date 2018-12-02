@@ -35,7 +35,21 @@
           });
       }
     }, 3000);
-    
+
+    window.addEventListener("touchstart", function() {
+        var video = document.getElementById("b-video");
+        var promise = video.play();
+
+        if(promise !== undefined) {
+            promise.then(_ => {
+
+            }).catch(error => {
+                alert("Son todos putos.");
+                video.play();
+            });
+        }
+    }, false);
+
     window.onload = function() {
 
     };
