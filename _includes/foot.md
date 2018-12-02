@@ -22,21 +22,7 @@
     }
 </script>
 <script>
-    window.setTimeout(function () {
-      var video = document.getElementById("b-video");
-      var promise = video.play();
-
-      if(promise !== undefined) {
-          promise.then(_ => {
-
-          }).catch(error => {
-              alert("Son todos putos.");
-              video.play();
-          });
-      }
-    }, 3000);
-
-    window.addEventListener("touchstart", function() {
+    document.addEventListener("touchstart", function() {
         var video = document.getElementById("b-video");
         var promise = video.play();
 
@@ -44,11 +30,10 @@
             promise.then(_ => {
 
             }).catch(error => {
-                alert("Son todos putos.");
                 video.play();
             });
         }
-    }, false);
+    }, true);
 
     window.onload = function() {
 
