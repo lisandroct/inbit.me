@@ -103,13 +103,21 @@ html a:hover {
     margin-right: 0.3em;
 }
 
-#b-video {
+.b-video {
     position: absolute;
     z-index: -10;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+#b-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
 }
 
 .play-button {

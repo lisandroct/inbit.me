@@ -4,10 +4,12 @@ layout: home
 
 <section class="splash">
     <div class="left">
-        <video muted loop playsinline id="b-video" poster="{{site.baseurl}}/assets/poster.jpg">
-            <source src="{{site.baseurl}}/assets/hd.webm" type="video/webm">
-            <source src="{{site.baseurl}}/assets/hd.mp4" type="video/mp4">
-        </video>
+        <div class="b-video">
+            <video muted loop playsinline id="b-video" poster="{{site.baseurl}}/assets/poster.jpg">
+                <source src="{{site.baseurl}}/assets/hd.webm" type="video/webm">
+                <source src="{{site.baseurl}}/assets/hd.mp4" type="video/mp4">
+            </video>
+        </div>
         <div class="container">
             <div class="content" id="content">
                 <h1>Invitaciones digitales para casamientos y eventos</h1>
