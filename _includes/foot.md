@@ -22,22 +22,32 @@
     }
 </script>
 <script>
-    document.addEventListener("touchstart", function() {
-        var video = document.getElementById("b-video");
+    var video = document.getElementById("b-video");
+
+    window.onload = function() {
         var promise = video.play();
 
         if(promise !== undefined) {
             promise.then(_ => {
 
             }).catch(error => {
-                video.play();
+                var playButton = document.getElementById("play-button");
+                playButton.style.display = "";
+
+                var content = document.getElementById("content");
+                content.style.opacity = "0";
             });
         }
-    }, true);
-
-    window.onload = function() {
-
     };
+
+    function playVideo() {
+        var playButton = document.getElementById("play-button");
+        var content = document.getElementById("content");
+
+        video.play();
+        playButton.style.display = "none";
+        content.style.opacity = "";
+    }
 </script>
 </body>
 </html>
