@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+    </head>
+    <body>
+    </body>
+    <script>
+        (function() {
+            redirect();
+        }());
+
+        function redirect() {
+            if(isOnIOS() || !supportsWasm()) {
+                window.location.replace("/asmjs");
+            } else {
+                 window.location.replace("/wasm");
+            }
+        }
+
+        function isOnIOS() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return true;
+            }
+
+            return false;
+        }
+
+        function supportsWasm() {
+            try {
+                if (typeof WebAssembly === "object"
+                    && typeof WebAssembly.instantiate === "function") {
+                    const module = new WebAssembly.Module(Uint8Array.of(0x0, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00));
+                    if (module instanceof WebAssembly.Module)
+                        return new WebAssembly.Instance(module) instanceof WebAssembly.Instance;
+                }
+            } catch (e) {
+            }
+
+            return false;
+        }
+    </script>
+</html>
