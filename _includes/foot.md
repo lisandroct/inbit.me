@@ -1,67 +1,13 @@
-<script>
-    var form = document.getElementById("contact-form");
-
-    form.onsubmit = function(e) {
-      	e.preventDefault();
-
-      	var f = e.target,
-            		formData = new FormData(f),
-            		xhr = new XMLHttpRequest();
-
-      	xhr.open("POST", f.action);
-      	xhr.send(formData);
-
-        form.reset();
-
-        var title = document.getElementById("title");
-        var prev = title.innerHTML;
-        title.innerHTML = "¡Gracias por contactarnos!";
-        window.setTimeout(function () {
-          title.innerHTML = prev;
-        }, 3000);
-    }
-</script>
-<script>
-    var video = document.getElementById("b-video");
-    var playButton = document.getElementById("play-button");
-    var content = document.getElementById("content");
-    var attempts = 0;
-
-    window.onload = function() {
-        playVideo();
-    };
-
-    function playVideo() {
-        var promise = video.play();
-
-        hidePlayButton();
-        if(attempts > 0) {
-            showContent();
-        }
-
-        if(promise !== undefined) {
-            promise.then(_ => {
-                showContent();
-            }).catch(error => {
-                showPlayButton();
-            });
-        }
-
-        attempts++;
-    }
-
-    function showPlayButton() {
-        playButton.style.display = "";
-    }
-
-    function hidePlayButton() {
-        playButton.style.display = "none";
-    }
-
-    function showContent() {
-        content.style.transition = "opacity 0.5s";
-        content.style.opacity = "1";        
-    }
-</script>
+<noscript id="deferred-styles">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/forms-nr-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/buttons-min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:700" rel="stylesheet">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/styles.min.css">
+</noscript>
+<script type="text/javascript" src="{{site.baseurl}}/js/deferred-styles.min.js" async></script>
+<script type="text/javascript" src="{{site.baseurl}}/js/video.min.js" async></script>
+<script type="text/javascript" src="{{site.baseurl}}/js/form.min.js" async></script>
 </body>
 </html>
