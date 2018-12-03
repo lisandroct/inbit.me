@@ -20,7 +20,7 @@ layout: home
         <a href="javascript:playVideo();">
             <div class="play-button" style="display: none;" id="play-button">
                 <i class="far fa-play-circle"></i>
-                <p>Conocer lo que hacemos</p>
+                <p>Conocé lo que hacemos</p>
             </div>
         </a>
     </div>
@@ -46,9 +46,9 @@ layout: home
             </div>
         </div>
         <div class="contact-info">
-            <a href="https://instagram.com/InbitMe"><p><i class="fab fa-instagram"></i>@InbitMe</p></a>
-            <a href="mailto://hey@inbit.me"><p><i class="far fa-envelope"></i> hey@inbit.me</p></a>
-            <a href="tel:+5493413114710"><p><i class="fab fa-whatsapp"></i> +5493413114710</p></a>
+            <a href="https://instagram.com/{{site.social.instagram}}"><p><i class="fab fa-instagram"></i>@{{site.social.instagram}}</p></a>
+            <a href="mailto://{{site.social.email}}"><p><i class="far fa-envelope"></i> {{site.social.email}}</p></a>
+            <a href="tel:{{site.social.whatsapp}}"><p><i class="fab fa-whatsapp"></i> {{site.social.whatsapp}}</p></a>
         </div>
     </div>
 </section>

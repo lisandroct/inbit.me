@@ -1,7 +1,7 @@
 url: "https://inbyte.me"
 baseurl: ""
 
-title: "Inbyte - Invitaciones Digitales"
+title: "Inbit Me - Invitaciones Digitales"
 description: "Invitaciones digitales e interactivas para casamientos, cumpleaños, eventos empresariales y sociales."
 keywords:
   - "invitaciones"
@@ -12,11 +12,13 @@ keywords:
   - "cumpleaños"
   - "birthday"
   - "party"
-  
+
 social:
   email: "hey@inbyte.me"
+  instagram: "InbitMe"
+  whatsapp: "+5493413114710"
 
-exclude: 
+exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
