@@ -11,9 +11,9 @@
 
         function redirect() {
             if(isOnIOS() || !supportsWasm()) {
-                window.location.replace("/asmjs");
+                window.location.replace("demo/asmjs");
             } else {
-                 window.location.replace("/wasm");
+                 window.location.replace("demo/wasm");
             }
         }
 
