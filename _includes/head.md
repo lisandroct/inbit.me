@@ -15,5 +15,10 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/forms-nr-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/buttons-min.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/styles.min.css">
 </head>
 <body>
