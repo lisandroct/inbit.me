@@ -46,9 +46,9 @@ layout: home
             </div>
         </div>
         <div class="contact-info">
-            <a href="https://instagram.com/{{site.social.instagram}}"><p><i class="fab fa-instagram"></i>@{{site.social.instagram}}</p></a>
-            <a href="mailto://{{site.social.email}}"><p><i class="far fa-envelope"></i> {{site.social.email}}</p></a>
-            <a href="tel:{{site.social.whatsapp}}"><p><i class="fab fa-whatsapp"></i> {{site.social.whatsapp}}</p></a>
+            <a href="https://instagram.com/{{site.social.instagram}}" target="_blank"><p><i class="fab fa-instagram"></i>@{{site.social.instagram}}</p></a>
+            <a href="mailto://{{site.social.email}}" target="_blank"><p><i class="far fa-envelope"></i> {{site.social.email}}</p></a>
+            <a href="tel:{{site.social.whatsapp}}" target="_blank"><p><i class="fab fa-whatsapp"></i> {{site.social.whatsapp}}</p></a>
         </div>
     </div>
 </section>
