@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="margin: 0;">
+    <div id="container" style="height: 100vh; display: flex; align-items: center; justify-content: center; background-image: url(web-background.png); background-size: cover;">
+
+    </div>
+<script src="anime.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.2/pixi.min.js"></script>
+<script>
+    // Converts from degrees to radians.
+    Math.radians = function(degrees) {
+      return degrees * Math.PI / 180;
+    };
+
+    // Converts from radians to degrees.
+    Math.degrees = function(radians) {
+      return radians * 180 / Math.PI;
+    };
+</script>
+<script>
+    const container = document.getElementById("container");
+    const app = new PIXI.Application(720, 1009, {transparent : true});
+    app.view.style.height = "100vh";
+    container.appendChild(app.view);
+
+    const loader = PIXI.loader;
+
+    const sprites = {};
+    loader.add("firstBackground", "01.png")
+          .add("firstCharacter", "01-character.png")
+          .add("firstDialog", "01-dialog.png")
+          .add("secondBackground", "02.png")
+          .add("secondWarn", "02-warn.png")
+          .add("secondCharacter", "02-character.png")
+          .add("secondDialog", "02-dialog.png")
+          .add("thirdBackground", "03.png")
+          .add("thirdWarn", "03-warn.png")
+          .add("thirdToc01", "03-toc-01.png")
+          .add("thirdToc02", "03-toc-02.png")
+          .add("thirdToc03", "03-toc-03.png")
+          .add("thirdCharacter", "03-character.png")
+          .add("thirdDialog01", "03-dialog-01.png")
+          .add("thirdDialog02", "03-dialog-02.png");
+
+    var loaded = false;
+    var logoTime = false;
+
+    const background = createBackground();
+    const logo = createLogo();
+
+    const first = {};
+    const second = {};
+    const third = {};
+    loader.load((loader, resources) => {
+        first.background = new PIXI.Sprite(resources.firstBackground.texture);
+        first.character = new PIXI.Sprite(resources.firstCharacter.texture);
+        first.dialog = new PIXI.Sprite(resources.firstDialog.texture);
+
+        second.background = new PIXI.Sprite(resources.secondBackground.texture);
+        second.warn = new PIXI.Sprite(resources.secondWarn.texture);
+        second.character = new PIXI.Sprite(resources.secondCharacter.texture);
+        second.dialog = new PIXI.Sprite(resources.secondDialog.texture);
+
+        third.background = new PIXI.Sprite(resources.thirdBackground.texture);
+        third.warn = new PIXI.Sprite(resources.thirdWarn.texture);
+        third.toc01 = new PIXI.Sprite(resources.thirdToc01.texture);
+        third.toc02 = new PIXI.Sprite(resources.thirdToc02.texture);
+        third.toc03 = new PIXI.Sprite(resources.thirdToc03.texture);
+        third.character = new PIXI.Sprite(resources.thirdCharacter.texture);
+        third.dialog01 = new PIXI.Sprite(resources.thirdDialog01.texture);
+        third.dialog02 = new PIXI.Sprite(resources.thirdDialog02.texture);
+    });
+
+    loader.onComplete.add(() => {
+        loaded = true;
+        initialize();
+    });
+
+    logoIntro();
+
+    function createBackground() {
+        var background = PIXI.Sprite.fromImage("background.png");
+        background.x = 0;
+        background.y = 0;
+        app.stage.addChild(background);
+
+        return background;
+    }
+
+    function createLogo() {
+        var logo = PIXI.Sprite.fromImage("logo-02.png");
+        logo.anchor.set(0.5, 0.5);
+        logo.x = app.screen.width / 2;
+        logo.y = app.screen.height / 2;
+        app.stage.addChild(logo);
+
+        return logo;
+    }
+
+    function logoIntro() {
+        return anime({
+            targets: logo.scale,
+            x: [0, 1],
+            y: [0, 1],
+            duration: 500,
+            delay: 500,
+            easing: "easeOutBack",
+            complete: function() {
+                window.setTimeout(() => {
+                    logoTime = true;
+                    initialize();
+                }, 3000);
+            }
+        });
+    }
+
+    function initialize() {
+        if(!logoTime || !loaded) {
+            return;
+        }
+
+        initializeFrames();
+        createTimeline();
+    }
+
+    function initializeFrames() { initializeFirstFrame(); initializeSecondFrame(); initializeThirdFrame(); }
+
+    function initializeFirstFrame() {
+        var background = first.background;
+        var character = first.character;
+        var dialog = first.dialog;
+
+        background.x = 0;
+        background.y = 0;
+
+        character.anchor.set(0.5, 0.96);
+        character.x = 360;
+        character.y = 340;
+
+        dialog.anchor.set(0, 1);
+        dialog.x = 450;
+        dialog.y = 165;
+
+        app.stage.addChild(background);
+        app.stage.addChild(character);
+        app.stage.addChild(dialog);
+    }
+
+    function initializeSecondFrame() {
+        var background = second.background;
+        var warn = second.warn;
+        var character = second.character;
+        var dialog = second.dialog;
+
+        background.x = 0;
+        background.y = 311;
+
+        warn.anchor.set(0.87, 0.88);
+        warn.x = 513;
+        warn.y = 440;
+
+        character.anchor.set(0.55, 0.96);
+        character.x = 574;
+        character.y = 627;
+
+        dialog.anchor.set(1, 0.63);
+        dialog.x = 482;
+        dialog.y = 537;
+
+        app.stage.addChild(background);
+        app.stage.addChild(warn);
+        app.stage.addChild(character);
+        app.stage.addChild(dialog);
+    }
+
+    function initializeThirdFrame() {
+        var background = third.background;
+        var warn = third.warn;
+        var toc01 = third.toc01;
+        var toc02 = third.toc02;
+        var toc03 = third.toc03;
+        var character = third.character;
+        var dialog01 = third.dialog01;
+        var dialog02 = third.dialog02;
+
+        background.x = 0;
+        background.y = 311 + 268;
+
+        warn.anchor.set(0, 0.79);
+        warn.x = 203;
+        warn.y = 787;
+
+        toc01.anchor.set(0.5, 0.5);
+        toc01.x = 172;
+        toc01.y = 898;
+
+        toc02.anchor.set(0.5, 0.5);
+        toc02.x = 211;
+        toc02.y = 847;
+
+        toc03.anchor.set(0.5, 0.5);
+        toc03.x = 144;
+        toc03.y = 806;
+
+        character.anchor.set(0.51, 1);
+        character.x = 475;
+        character.y = 1009;
+
+        dialog01.anchor.set(0.23, 1);
+        dialog01.x = 144;
+        dialog01.y = 716;
+
+        dialog02.anchor.set(0.32, 0.99);
+        dialog02.x = 421;
+        dialog02.y = 778;
+
+        app.stage.addChild(background);
+        app.stage.addChild(warn);
+        app.stage.addChild(toc01);
+        app.stage.addChild(toc02);
+        app.stage.addChild(toc03);
+        app.stage.addChild(character);
+        app.stage.addChild(dialog01);
+        app.stage.addChild(dialog02);
+    }
+
+    function createTimeline() {
+        return anime.timeline().add(logoOutro()).add(firstFrameIntro()).add(secondFrameIntro()).add(thirdFrameIntro()).add(framesOutro());
+    }
+
+    function logoOutro() {
+        return {
+            targets: logo.scale,
+            x: 0,
+            y: 0,
+            duration: 500,
+            easing: "easeInBack"
+        }
+    }
+
+    function firstFrameIntro() {
+        var background = first.background;
+        var character = first.character;
+        var dialog = first.dialog;
+
+        return [
+            {
+                targets: background,
+                alpha: [0, 1],
+                x: [background.x + 100, background.x],
+                duration: 1000,
+                offset: "+=1000",
+                easing: "easeOutQuad"
+            },
+            {
+                targets: character,
+                alpha: { value: [0, 1], easign: "easeOutQuad" },
+                x: { value: [character.x - 100, character.x], easing: "easeOutBack" },
+                duration: 1500,
+                offset: "-=500"
+            },
+            {
+                targets: dialog,
+                alpha: { value: [0, 1], easign: "easeOutQuad" },
+                rotation: { value: [Math.radians(Math.degrees(dialog.rotation) - 40), dialog.rotation], easign: "easeOutBack" },
+                duration: 500,
+                offset: "-=250"
+            }
+        ];
+    }
+
+    function secondFrameIntro() {
+        var background = second.background;
+        var warn = second.warn;
+        var character = second.character;
+        var dialog = second.dialog;
+
+        return [
+            {
+                targets: background,
+                alpha: [0, 1],
+                x: [background.x + 100, background.x],
+                y: [background.y + 10, background.y],
+                duration: 1000,
+                offset: "+=1000",
+                easing: "easeOutQuad"
+            },
+            {
+                targets: character,
+                alpha: { value: [0, 1], easign: "easeOutQuad" },
+                x: { value: [character.x - 100, character.x], easing: "easeOutBack" },
+                duration: 1500,
+                offset: "-=500"
+            },
+            {
+                targets: warn,
+                alpha: [0, 1],
+                duration: 500,
+                offset: "-=100",
+                easign: "easeOutQuad"
+            },
+            {
+                targets: warn.scale,
+                x: [0, 1],
+                y: [0, 1],
+                duration: 500,
+                offset: "-=500",
+                easing: "easeOutBack"
+            },
+            {
+                targets: dialog,
+                alpha: { value: [0, 1], easign: "easeOutQuad" },
+                rotation: { value: [Math.radians(Math.degrees(dialog.rotation) + 40), dialog.rotation], easign: "easeOutBack" },
+                duration: 500,
+                offset: "+=250"
+            }
+        ];
+    }
+
+    function thirdFrameIntro() {
+        var background = third.background;
+        var warn = third.warn;
+        var toc01 = third.toc01;
+        var toc02 = third.toc02;
+        var toc03 = third.toc03;
+        var character = third.character;
+        var dialog01 = third.dialog01;
+        var dialog02 = third.dialog02;
+
+        return [
+            {
+                targets: background,
+                alpha: [0, 1],
+                x: [background.x - 100, background.x],
+                duration: 1000,
+                offset: "+=1000",
+                easing: "easeOutQuad"
+            },
+            {
+                targets: character,
+                alpha: { value: [0, 1], easign: "easeOutQuad" },
+                x: { value: [character.x - 100, character.x], easing: "easeOutBack" },
+                duration: 1500,
+                offset: "-=500"
+            },
+            {
+                targets: toc01.scale,
+                x: [0, 1],
+                y: [0, 1],
+                duration: 500,
+                offset: "-=500",
+                easing: "easeOutBack"
+            },
+            {
+                targets: toc02.scale,
+                x: [0, 1],
+                y: [0, 1],
+                duration: 500,
+                offset: "-=250",
+                easing: "easeOutBack"
+            },
+            {
+                targets: toc03.scale,
+                x: [0, 1],
+                y: [0, 1],
+                duration: 500,
+                offset: "-=250",
+                easing: "easeOutBack"
+            },
+            {
+                targets: warn,
+                alpha: [0, 1],
+                duration: 500,
+                offset: "-=250",
+                easign: "easeOutQuad"
+            },
+            {
+                targets: warn.scale,
+                x: [0, 1],
+                y: [0, 1],
+                duration: 500,
+                offset: "-=500",
+                easing: "easeOutBack"
+            },
+            {
+                targets: dialog01,
+                alpha: { value: [0, 1], easign: "easeOutQuad" },
+                rotation: { value: [Math.radians(Math.degrees(dialog01.rotation) - 40), dialog01.rotation], easign: "easeOutBack" },
+                duration: 500,
+                offset: "-=150"
+            },
+            {
+                targets: dialog02,
+                alpha: { value: [0, 1], easign: "easeOutQuad" },
+                rotation: { value: [Math.radians(Math.degrees(dialog02.rotation) + 40), dialog02.rotation], easign: "easeOutBack" },
+                duration: 500,
+                offset: "+=250"
+            }
+        ];
+    }
+
+    function framesOutro() {
+            return [
+                {
+                    targets: Object.values(first),
+                    x: "+=720",
+                    duration: 500,
+                    offset: "+=5000",
+                    easing: "easeInBack"
+                },
+                {
+                    targets: Object.values(second),
+                    x: "-=720",
+                    y: "-=60",
+                    duration: 500,
+                    offset: "-=500",
+                    easing: "easeInBack"
+                },
+                {
+                    targets: Object.values(third),
+                    x: "+=720",
+                    duration: 500,
+                    offset: "-=500",
+                    easing: "easeInBack"
+                }
+            ];
+        }
+</script>
+</body>
+</html>
