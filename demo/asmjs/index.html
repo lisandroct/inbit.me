@@ -36,9 +36,11 @@
                 top: 0;
                 width: 100%;
                 height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
-            canvas {
-                width: 100%;
+            #canvas {
                 height: 100%;
                 display: block;
             }
@@ -79,7 +81,7 @@
 
     <body>
         <div id="gameContainer"></div>
-        <div id="container" style="height: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background-image: url(web-background.png); background-size: cover;">
+        <div id="container" style="position: absolute; left: 0; right: 0; height: 100%; width: 100%; margin: 0; display: flex; align-items: center; justify-content: center; background-image: url(web-background.png); background-size: cover;">
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.8.2/pixi.min.js"></script>
@@ -96,9 +98,9 @@
         </script>
         <script>
               const container = document.getElementById("container");
-              const app = new PIXI.Application(720, 1009, {width: 720, height: 1009, autoResize: true, legacy: true});
+              const app = new PIXI.Application(720, 1009, {autoResize: true, legacy: true});
               app.view.style.height = "100%";
-              app.view.style.width = "inherit"
+              app.view.style.width = "auto";
               container.appendChild(app.view);
 
               const background = createBackground();
