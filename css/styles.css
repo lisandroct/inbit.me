@@ -151,6 +151,20 @@ h1 {
     background-image: url("../assets/logo-h.svg");
 }
 
+.play {
+    background-color: #df1260;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.play:hover, .play:focus {
+    /* csslint ignore:start */
+    filter: none;
+    /* csslint ignore:end */
+    background-image: none;
+    background-color: #df1260;
+}
+
 .submit {
     background-color: #f5af00;
     color: #ffffff;

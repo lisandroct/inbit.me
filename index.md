@@ -15,6 +15,7 @@ layout: home
                 <h1>Invitaciones digitales para casamientos y eventos</h1>
                 <p>Somos un equipo con más de 5 años de experiencia desarrollando videojuegos y experiencias interactivas audiovisuales.</p>
                 <p>Ofrecemos servicios de tarjetería digital e invitaciones interactivas para casamientos, fiestas y eventos. Nos especializamos en soluciones creativas y únicas, con diseños, animaciones e ilustraciones personalizadas. Trabajamos junto a nuestros clientes para lograr concretar su visión de una forma memorable. Nuestro objetivo es que sus invitados vivan una fiesta única desde el momento en que reciben su invitación.</p>
+                <a href="{{site.baseurl}}/demo" target="_blank"><button class="pure-button pure-input-1 submit" style="margin-top: 1em;background-color: #df1260;">Conocé nuestro producto</button></a>
             </div>
         </div>
         <a href="javascript:playVideo();">
