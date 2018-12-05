@@ -28,7 +28,7 @@ layout: home
         <div class="container">        
             <div class="contact">
                 <h1 id="title">¡Hacenos parte de tu evento!</h1>
-                <form class="pure-form" id="contact-form" action="http://getsimpleform.com/messages?form_api_token=b22a9eb5e5b0af5946589870e6a2ac12" method="POST">
+                <form class="pure-form" id="contact-form" action="https://getsimpleform.com/messages?form_api_token=b22a9eb5e5b0af5946589870e6a2ac12" method="POST">
                     <fieldset class="pure-group">
                         <input type="text" class="pure-input-1" placeholder="Nombre" name="name" required>
                         <input type="tel" class="pure-input-1" placeholder="Teléfono de contacto" name="number" required>
