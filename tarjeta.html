@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #ffffff;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="position: absolute;top: 0;left: 0;height: 100%;width: 100%;display: flex;flex-direction: column;align-items: center;">
+          <img src="assets/tarjeta.jpg" style="max-height: 100%;max-width: 100%;">
+        </div>
+        <a id="link" href="assets/tarjeta.jpg" style="display: none" download=""></a>
+    </body>
+    <script>
+        (function () {
+            setTimeout((function () { document.getElementById("link").click(); }), 3000);
+        }());
+    </script>
+</html>
