@@ -11,8 +11,7 @@
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
-
-        <link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">
+        
         <style>
             html {
                 box-sizing: border-box;
@@ -43,38 +42,6 @@
             #canvas {
                 height: 100%;
                 display: block;
-            }
-
-            .logo {
-                margin-top: 10%;
-                max-width: 70%;
-                max-height: 50%;
-            }
-
-            .progress {
-                margin: 1.5em;
-                border: 1px solid white;
-                width: 50%;
-                left: 25%;
-                right: 25%;
-                position: relative;
-                display: none;
-            }
-            .progress .full {
-                margin: 2px;
-                background: white;
-                height: 1em;
-                transform-origin: top left;
-            }
-
-            #loader {
-                position: fixed;
-                text-align: center;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background-color: #d9effd;
             }
         </style>
     </head>
@@ -131,7 +98,6 @@
              });
 
              titleLoader.onComplete.add(() => {
-                 createLoader();
                  initializeTitle();
                  titleIntro();
 
@@ -150,6 +116,8 @@
                       .add("thirdCharacter", "03-character.png")
                       .add("thirdDialog01", "03-dialog-01.png")
                       .add("thirdDialog02", "03-dialog-02.png");
+                      //.add("instructions", "instructions.png")
+                      //.add("loading", "loading.png");
 
                   mainLoader.load((loader, resources) => {
                       first.background = new PIXI.Sprite(resources.firstBackground.texture);
@@ -169,6 +137,9 @@
                       third.character = new PIXI.Sprite(resources.thirdCharacter.texture);
                       third.dialog01 = new PIXI.Sprite(resources.thirdDialog01.texture);
                       third.dialog02 = new PIXI.Sprite(resources.thirdDialog02.texture);
+                      
+                      //loader.instructions = new PIXI.Sprite(resources.instructions.texture);
+                      //loader.loading = new PIXI.Sprite(resources.loading.texture);
                   });
 
                   mainLoader.onComplete.add(() => {
@@ -250,6 +221,7 @@
                       return;
                   }
 
+                  initializeLoader();
                   initializeFrames();
                   var timeline = framesIntro();
                   timeline.complete = function() {
@@ -566,14 +538,17 @@
                   });
               }
 
-              function createLoader() {
-                  var instructions = new PIXI.Text("Ayudá a María a juntar los zapatos, el collar y los aritos.\n\n¡Evitá que Javier te vea!", {fontFamily : "Merriweather", fontSize: 40, fill : 0xffffff, wordWrap: true, wordWrapWidth: 450, align: "center" });
-                  instructions.anchor.set(0.5, 0.85);
+              function initializeLoader() {
+                  var instructions = PIXI.Sprite.fromImage("instructions.png");
+                  var loading = PIXI.Sprite.fromImage("loading.png");
+                  //var instructions = loader.instructions;
+                  //var loading = loader.loading;
+                  
+                  instructions.anchor.set(0.5, 0.7);
                   instructions.x = app.screen.width / 2;
                   instructions.y = app.screen.height / 2;
                   instructions.alpha = 0;
 
-                  var loading = new PIXI.Text("Cargando...", {fontFamily : "Merriweather", fontSize: 24, fill : 0xffffff});
                   loading.anchor.set(0.5, 0.5);
                   loading.x = app.screen.width / 2;
                   loading.y = app.screen.height - 135;
@@ -581,15 +556,16 @@
 
                   app.stage.addChild(instructions);
                   app.stage.addChild(loading);
-
+                  
                   loader.instructions = instructions;
                   loader.loading = loading;
               }
 
+              var heartAnim;
               function showLoader() {
                   framesOutro();
 
-                  anime({
+                  heartAnim = anime({
                       targets: title.heart,
                       rotation: 2 * Math.PI,
                       loop: true
@@ -605,12 +581,14 @@
                   }
                   
                   anime({
-                      targets: app.view,
+                      targets: container,
                       duration: 1000,
                       opacity: 0,
                       easing: "easeInQuad",
                       complete: function() {
-                          container.parentNode.removeChild(container);
+                          heartAnim.pause();
+                          app.destroy(true, true);
+                          container.parentElement.removeChild(container);
                       }
                   });
               }
@@ -635,7 +613,7 @@
     <script src="Build/UnityLoader.js"></script>
     
     <script>
-        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/wasm.json", {onProgress: UnityProgress, popup: UnityPopup});
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/wasm.json", {onProgress: UnityProgress});
         
         function UnityProgress(gameInstance, progress) {
             if (!gameInstance.Module) {
@@ -659,6 +637,7 @@
         }
     </script>
     <script>
+        /*
         (function () {
             alert = function (msg) {
                 RedirectToInvitation();
@@ -667,6 +646,7 @@
                 RedirectToInvitation();
             };
         }());
+        */
     </script>
 </html>
 
