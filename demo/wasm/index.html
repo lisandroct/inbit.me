@@ -96,8 +96,8 @@
         </script>
         <script>
               const container = document.getElementById("container");
-              const app = new PIXI.Application(720, 1009, {transparent : true});
-              app.view.style.height = "100vh";
+              const app = new PIXI.Application(720, 1009, {width: 720, height: 1009, autoResize: true, legacy: true});
+              app.view.style.height = "100%";
               app.view.style.width = "inherit"
               container.appendChild(app.view);
 
@@ -612,6 +612,21 @@
                       }
                   });
               }
+        </script>
+        <script>
+            function isWebGLSuported() {
+                // The canvas is not added to the document itself,
+                // so it's never displayed in the browser window.
+                var canvas = document.createElement("canvas");
+                // Get WebGLRenderingContext from canvas element.
+                var gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+                // Report the result.
+                if (gl && gl instanceof WebGLRenderingContext) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         </script>
     </body>
 
